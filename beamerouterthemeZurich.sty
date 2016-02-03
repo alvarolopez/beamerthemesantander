@@ -102,43 +102,6 @@
 \fi
 }
 
-
-
-\defbeamertemplate*{frametitle}{Zurich theme}[1][left]
-{
-% \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
-\@tempdima=\textwidth%
-\advance\@tempdima by\beamer@leftmargin%
-\advance\@tempdima by\beamer@rightmargin%
-
-\vbox{}\vskip-3.5ex%
-%
-\begin{beamercolorbox}[sep=0.3cm,#1,wd=\the\@tempdima]{titlelike}
-	\usebeamerfont{frametitle}%
-	\vbox{}\vskip-1ex%
-	\if@tempswa\else\csname beamer@fte#1\endcsname\fi%
-	% \strut{\bf\insertframetitle}\strut\par% 					%% Include the \bf
-	\strut{\insertframetitle}\strut\par%
-	{%
-  		\ifx\insertframesubtitle\@empty%
-  		\else
-			{\usebeamerfont{framesubtitle}
-			 \usebeamercolor[fg]{framesubtitle}
-			\insertframesubtitle\strut\par}%
-  		\fi
- 	}%
-	%
-  	\vskip-1ex%
-  	\if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
-\end{beamercolorbox}%
-%%
-
-% \def\beamer@fteright{\vskip0.35cm\advance\leftskip by 1.7cm\advance\rightskip by1.7cm}
-}
-
-
-
-
 % Sidebar right is important: anything placed here will be
 % visible *behind* the main text. This is where to put any
 % interesting watermarks.
