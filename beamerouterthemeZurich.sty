@@ -19,10 +19,6 @@
 % ???
 \def\beamer@Zurich@truetext{true} % Kludge for true/false so I can use ifx
 
-% line at the top
-\DeclareOptionBeamer{topline}[true]{\def\beamer@Zurich@topline{#1}}
-\ExecuteOptionsBeamer{topline=true} % Default
-
 
 \ProcessOptionsBeamer
 
@@ -102,6 +98,43 @@
 \fi
 }
 
+
+
+\defbeamertemplate*{frametitle}{Zurich theme}[1][left]
+{
+% \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+\@tempdima=\textwidth%
+\advance\@tempdima by\beamer@leftmargin%
+\advance\@tempdima by\beamer@rightmargin%
+
+\vbox{}\vskip-3.5ex%
+%
+\begin{beamercolorbox}[sep=0.3cm,#1,wd=\the\@tempdima]{titlelike}
+	\usebeamerfont{frametitle}%
+	\vbox{}\vskip-1ex%
+	\if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+	% \strut{\bf\insertframetitle}\strut\par% 					%% Include the \bf
+	\strut{\insertframetitle}\strut\par%
+	{%
+  		\ifx\insertframesubtitle\@empty%
+  		\else
+			{\usebeamerfont{framesubtitle}
+			 \usebeamercolor[fg]{framesubtitle}
+			\insertframesubtitle\strut\par}%
+  		\fi
+ 	}%
+	%
+  	\vskip-1ex%
+  	\if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
+\end{beamercolorbox}%
+%%
+
+% \def\beamer@fteright{\vskip0.35cm\advance\leftskip by 1.7cm\advance\rightskip by1.7cm}
+}
+
+
+
+
 % Sidebar right is important: anything placed here will be
 % visible *behind* the main text. This is where to put any
 % interesting watermarks.
@@ -116,15 +149,6 @@
 % ... make a png of the background with TRANSPARENT BG
 % ... then put the image here (use \hfill to get it on the left)
 % Now one can FURTHER apply a slight gradient in the BG
-%
-% 
-% % Top Line 
-\ifx\beamer@Zurich@topline\beamer@Zurich@truetext
-	\begin{tikzpicture}[overlay]
-	\usebeamercolor[fg]{titlelike}	% alternately, topbarlike would be a good beamercolor
-	\draw[fill] (-\paperwidth,0) rectangle (0,-3pt);
-	\end{tikzpicture}
-\fi
 %
 % 
   \vskip.1\beamer@leftmargin%
