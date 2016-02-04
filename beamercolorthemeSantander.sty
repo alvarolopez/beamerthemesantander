@@ -64,9 +64,18 @@
 
 % Default to black on white
 %\setbeamercolor*{footerlike}{fg=white,bg=black!30!tangocolordarkaluminium} % for gray footer
+
+\setbeamercolor{normal text}{%
+    fg=solarizedBase02,
+    bg=black!2
+}
+
 \setbeamercolor{structure}{fg=tangocolordarkskyblue, bg=white} % fg controls bullets
 
-\setbeamercolor{alerted text}{fg=solarizedMagenta}
+
+
+\setbeamercolor{alerted text}{fg=solarizedAccent}
+\setbeamercolor{example text}{fg=solarizedGreen}
 
 % -----------------------------------------------------------------------------
 
@@ -103,7 +112,14 @@
 
 % TODO: review
 
-\setbeamercolor*{palette primary}{fg=tangocolordarkskyblue,bg=black!30!tangocolordarkaluminium}
+%\setbeamercolor*{palette primary}{fg=tangocolordarkskyblue,bg=black!30!tangocolordarkaluminium}
+%\setbeamercolor*{palette primary}{fg=tangocolordarkskyblue,bg=black}
+\setbeamercolor{palette primary}{%
+  use=normal text,
+  fg=normal text.bg,
+  bg=normal text.fg,
+}
+
 %\setbeamercolor*{palette secondary}{fg=paleale,bg=lager}
 %\setbeamercolor*{palette tertiary}{fg=turtlegreen,bg=jeans}
 %\setbeamercolor*{palette quaternary}{fg=paleblue,bg=regal}
@@ -127,6 +143,8 @@
 \definecolor{solarizedBlue}{HTML}{268BD2}
 \definecolor{solarizedCyan}{HTML}{2AA198}
 \definecolor{solarizedGreen}{HTML}{859900}
+
+\colorlet{solarizedAccent}{solarizedOrange}
 
 % -----------------------------------------------------------------------------
 % OUTER THEME STRUCTURES

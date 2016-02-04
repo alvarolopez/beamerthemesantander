@@ -19,6 +19,27 @@
 \usefonttheme{Santander}   % Calls beamerfontthemeSantander.sty
 
 
+%-----------------------------------------------------------------------------
+% CUSTOM FRAMES
+
+\newcommand{\plain}[2][]{%
+    \begingroup
+    \setbeamercolor{background canvas}{
+        use=palette primary,
+        parent=palette primary
+    }
+    \begin{frame}[plain,c]{#1}
+        \begin{center}
+            \usebeamercolor[fg]{palette primary}
+            \usebeamerfont{plain title}
+            #2
+        \end{center}
+    \end{frame}
+    \endgroup
+}
+
+
+%-----------------------------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Background  Gradient %
@@ -28,7 +49,7 @@
 %% Usually I would leave this on
 %% However, there seems to be problems with XeLaTeX
 %% http://tex.stackexchange.com/questions/29497/xelatex-preventing-beamer-from-using-different-backgrounds
-\setbeamertemplate{background canvas}[vertical shading][bottom=blue!.1, middle=white, top=white]
+%\setbeamertemplate{background canvas}[vertical shading][bottom=blue!.1, middle=white, top=white]
 
 %% HOWEVER: it seems to make it impossible to change this later on in the document
 

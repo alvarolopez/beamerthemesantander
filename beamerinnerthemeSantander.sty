@@ -47,7 +47,7 @@
     \end{beamercolorbox}%
     \separator
     \begin{beamercolorbox}[sep=8pt,#1]{author}
-        {\vspace*{2em}\par
+        {\vspace*{1.5em}\par
         \usebeamerfont{author}
         \insertauthor 
         \par
@@ -59,7 +59,15 @@
         \insertdate
         }
     \end{beamercolorbox}\vskip0.5em
-    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \ifx\inserttitlegraphic\@empty\else
+    \vbox to 0pt {
+        \inserttitlegraphic%
+    }%
+    \nointerlineskip%
+    \fi
+%    \ifx\inserttitlegraphic\@empty\else
+%    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+%    \fi
   \vfill
 }
 \def\maketitle{%
@@ -74,7 +82,7 @@
 }
 \def\separator{
   \begin{tikzpicture}
-    \draw[fg, fill=fg] (0,0) rectangle (\textwidth, 0.4pt);
+    \draw[solarizedAccent, fill=solarizedAccent] (0,0) rectangle (\textwidth, 0.4pt);
   \end{tikzpicture}%
   \par%
 }
