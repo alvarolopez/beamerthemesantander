@@ -89,6 +89,48 @@
 
 %-----------------------------------------------------------------------------
 
+\defbeamertemplate{section page}{cool}{
+  \centering
+  \begin{minipage}{22em}
+  \usebeamercolor[fg]{section title}
+  \usebeamerfont{section title}
+  \insertsectionhead\\[-1ex]
+  \separator
+  \end{minipage}
+  \par
+}
+\defbeamertemplate{subsection page}{cool}{
+  \centering
+  \begin{minipage}{22em}
+  \usebeamercolor[fg]{section title}
+  \usebeamerfont{section title}
+  \insertsectionhead\\[-1ex]
+  \separator
+  \vspace{0.2em}
+  \usebeamerfont{subsection title}
+  \raggedleft
+  \insertsubsectionhead\\[-1ex]
+  \end{minipage}
+  \par
+}
+\setbeamertemplate{section page}[cool]
+\setbeamertemplate{subsection page}[cool]
+\AtBeginSection{
+    \ifbeamer@inframe
+      \sectionpage
+    \else
+      \frame[plain,c,noframenumbering]{\sectionpage}
+    \fi
+}
+\AtBeginSubsection{
+    \ifbeamer@inframe
+      \subsectionpage
+    \else
+      \frame[plain,c,noframenumbering]{\subsectionpage}
+    \fi
+}
+
+
 
 %-----------------------------------------------------------------------------
 % ITEMS
