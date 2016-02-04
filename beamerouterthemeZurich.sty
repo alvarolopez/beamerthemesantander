@@ -16,6 +16,12 @@
 \beamer@Zurich@bigpagenumberfalse
 \DeclareOptionBeamer{bigpagenumber}{\beamer@Zurich@bigpagenumbertrue}
 
+% Footer
+\newif\ifbeamer@Zurich@footer
+\beamer@Zurich@footertrue
+\DeclareOptionBeamer{nofooter}{\beamer@Zurich@footerfalse}
+
+
 % ???
 \def\beamer@Zurich@truetext{true} % Kludge for true/false so I can use ifx
 
@@ -52,8 +58,8 @@
 % The footer bar %
 %%%%%%%%%%%%%%%%%%
 
-\defbeamertemplate*{footline}{Zurich theme}
-{%
+\defbeamertemplate*{footline}{Zurich theme}{
+\ifbeamer@Zurich@footer
   \leavevmode% 
 % OBSERVATION: the "%" symbols inside hbox are all very important here.
 % The \hbox enviroment will insert spaces whenever there's whitespace
@@ -83,7 +89,7 @@
 	\draw (.4\paperwidth,0) -- (.4\paperwidth,3.625ex);
 	\draw[thick] (0,0) -- (\paperwidth,0);
 \end{tikzpicture}
-
+\fi
 
 
 \ifbeamer@Zurich@bigpagenumber
