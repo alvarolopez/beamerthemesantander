@@ -110,6 +110,13 @@
 \setbeamertemplate{blocks}[rounded][shadow=\beamer@themerounded@shadow]
 %-----------------------------------------------------------------------------
 
+%-----------------------------------------------------------------------------
+% BLOCKS
+\newenvironment<>{noteblock}[2][]
+    {\begin{beamercolorbox}[sep=3mm, rounded=true, center, shadow=true, #1]{note}#2}
+    {\end{beamercolorbox}}
+%-----------------------------------------------------------------------------
+
 
 \mode<all>
 
