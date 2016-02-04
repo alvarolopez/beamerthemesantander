@@ -8,9 +8,6 @@
 	]{Santander}
 
 
-%-----------------------------------------------------------------------------
-% DOCUMENT PROPERTIES
-
 \author{{\'A}lvaro L{\'o}pez Garc{\'i}a}
 \title{Santander Theme}
 \subtitle{A minimalistic beamer theme}
@@ -18,58 +15,81 @@
 % \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo/logo}}
 
 
-%-----------------------------------------------------------------------------
-
-
 \begin{document}
 
-
-% ----------------------------------------------------------------------------
-\frame{
-
-\titlepage
-
-}
-% ----------------------------------------------------------------------------
-
+\begin{frame}
+    \titlepage
+\end{frame}
 
 \section{Example}
 
-
-% ----------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Fonts}
+    \frametitle{Lists}
+    \begin{columns}[T,onlytextwidth]
+        \column{0.33\textwidth}
+        Items
+        \begin{itemize}
+            \item Milk
+                \begin{itemize}
+                    \item Cow
+                    \item Sheep
+                \end{itemize}
+            \item Eggs
+            \item Potatos
+        \end{itemize}
 
-\begin{itemize}
-    \item Line 1.
-    \item<2-> Line 2.
-    \item<3-> Line 3.
-\end{itemize}
+        \column{0.33\textwidth}
+        Enumerations
+        \begin{enumerate}
+            \item First,
+            \item Second and
+            \item Last.
+                \begin{enumerate}
+                    \item But not,
+                    \item least!
+                \end{enumerate}
+        \end{enumerate}
 
+        \column{0.33\textwidth}
+        Descriptions
+        \begin{description}
+            \item[PowerPoint] Meeh.
+            \item[Beamer] Yeeeha.
+        \end{description}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Blocks}
+
+    \begin{block}{Standard Block}
+        This is a standard block.
+    \end{block}
+
+    \begin{exampleblock}{Example Block}
+        This is an example block.
+    \end{exampleblock}
+
+    \begin{alertblock}{Alert Block}
+        This is an alert block.
+    \end{alertblock}
+
+    \begin{noteblock}
+        This is a note
+    \end{noteblock}
+
+    \begin{noteblock}[wd=5cm]
+        Another note, with width
+    \end{noteblock}
 
 \end{frame}
-% ----------------------------------------------------------------------------
 
-
-% ----------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Blocks}
-
-\begin{block}{Standard Block}
-    This is a standard block.
-\end{block}
-
-\begin{exampleblock}{Example Block}
-    This is an example block.
-\end{exampleblock}
-
-\begin{alertblock}{Alert Block}
-    This is an alert block.
-\end{alertblock}
-
-
-
+\addtocounter{framenumber}{-1}
+\begin{frame}[c]{Extra page}{It doesn't add to the total page count}
+    \begin{itemize}
+        \item Use \alert{\texttt{addtocounter\{framenumber\}\{-1\}}} for extra slides (like this one) to prevent it from screwing up the page numbering.
+    \end{itemize}
 \end{frame}
-% ----------------------------------------------------------------------------
+
 
 \end{document}
