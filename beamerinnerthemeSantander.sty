@@ -6,7 +6,7 @@
 %-----------------------------------------------------------------------------
 % OPTIONS
 
-\DeclareOptionBeamer{bullet}{\def\beamer@Zurich@bullet{#1}}
+\DeclareOptionBeamer{bullet}{\def\beamer@Santander@bullet{#1}}
 \DeclareOptionBeamer{shadow}[true]{\def\beamer@themerounded@shadow{#1}}
 \ExecuteOptionsBeamer{shadow=false}
 
@@ -18,13 +18,13 @@
 %-----------------------------------------------------------------------------
 % MARGINS
 
-\newlength{\beamer@Zurich@normalmargin}
-\setlength{\beamer@Zurich@normalmargin}{.06\paperwidth}
-\setbeamersize{text margin left=\beamer@Zurich@normalmargin}
-\setbeamersize{text margin right=\beamer@Zurich@normalmargin}
-\setlength\leftmargini{.6\beamer@Zurich@normalmargin}
-\setlength\leftmarginii{.6\beamer@Zurich@normalmargin}
-\setlength\leftmarginiii{.6\beamer@Zurich@normalmargin}
+\newlength{\beamer@Santander@normalmargin}
+\setlength{\beamer@Santander@normalmargin}{.06\paperwidth}
+\setbeamersize{text margin left=\beamer@Santander@normalmargin}
+\setbeamersize{text margin right=\beamer@Santander@normalmargin}
+\setlength\leftmargini{.6\beamer@Santander@normalmargin}
+\setlength\leftmarginii{.6\beamer@Santander@normalmargin}
+\setlength\leftmarginiii{.6\beamer@Santander@normalmargin}
 
 %-----------------------------------------------------------------------------
 
@@ -32,7 +32,7 @@
 %-----------------------------------------------------------------------------
 % TITLE PAGE
 
-\defbeamertemplate*{title page}{Zurich theme}[1][]{
+\defbeamertemplate*{title page}{Santander theme}[1][]{
   \vbox{}
   \vfill
 %  \begin{centering}
@@ -101,7 +101,7 @@
 \setbeamertemplate{items}[circlealt]
 % 
 \def\circletext{circle}
-\ifx\beamer@Zurich@bullet\circletext
+\ifx\beamer@Santander@bullet\circletext
   \setbeamertemplate{items}[circlealt]
 \else
   \setbeamertemplate{items}[squarealt]

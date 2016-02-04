@@ -7,23 +7,23 @@
 % OPTIONS
 
 % Watermark
-\DeclareOptionBeamer{watermark}{\def\beamer@Zurich@watermark{#1}}
+\DeclareOptionBeamer{watermark}{\def\beamer@Santander@watermark{#1}}
 \ExecuteOptionsBeamer{watermark=} % Default value is empty
 
 
 % Page number
-\newif\ifbeamer@Zurich@bigpagenumber
-\beamer@Zurich@bigpagenumberfalse
-\DeclareOptionBeamer{bigpagenumber}{\beamer@Zurich@bigpagenumbertrue}
+\newif\ifbeamer@Santander@bigpagenumber
+\beamer@Santander@bigpagenumberfalse
+\DeclareOptionBeamer{bigpagenumber}{\beamer@Santander@bigpagenumbertrue}
 
 % Footer
-\newif\ifbeamer@Zurich@footer
-\beamer@Zurich@footertrue
-\DeclareOptionBeamer{nofooter}{\beamer@Zurich@footerfalse}
+\newif\ifbeamer@Santander@footer
+\beamer@Santander@footertrue
+\DeclareOptionBeamer{nofooter}{\beamer@Santander@footerfalse}
 
 
 % ???
-\def\beamer@Zurich@truetext{true} % Kludge for true/false so I can use ifx
+\def\beamer@Santander@truetext{true} % Kludge for true/false so I can use ifx
 
 
 \ProcessOptionsBeamer
@@ -53,8 +53,8 @@
 % The footer bar %
 %%%%%%%%%%%%%%%%%%
 
-\defbeamertemplate*{footline}{Zurich theme}{
-\ifbeamer@Zurich@footer
+\defbeamertemplate*{footline}{Santander theme}{
+\ifbeamer@Santander@footer
   \leavevmode% 
 % OBSERVATION: the "%" symbols inside hbox are all very important here.
 % The \hbox enviroment will insert spaces whenever there's whitespace
@@ -87,7 +87,7 @@
 \fi
 
 
-\ifbeamer@Zurich@bigpagenumber
+\ifbeamer@Santander@bigpagenumber
 	\begin{tikzpicture}[overlay]
 	\usebeamercolor[bg]{author in head/foot}
 	\draw[fill] (\paperwidth-5ex,3.625ex) circle (6ex);
@@ -101,7 +101,7 @@
 
 
 
-\defbeamertemplate*{frametitle}{Zurich theme}[1][left]
+\defbeamertemplate*{frametitle}{Santander theme}[1][left]
 {
 % \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
 \@tempdima=\textwidth%
@@ -140,7 +140,7 @@
 % interesting watermarks.
 %
 % 
-\defbeamertemplate*{sidebar right}{Zurich theme}
+\defbeamertemplate*{sidebar right}{Santander theme}
 {
 % \llap{\includegraphics[width=50px]{footdecoration}}
 % \llap{\includegraphics[width=\paperwidth,height=\paperheight]{upperleft_watermark_transp}}
@@ -154,11 +154,11 @@
   \vskip.1\beamer@leftmargin%
   % \llap{\insertlogo\hskip.5\beamer@leftmargin}%
   \vfill%
-  \if \beamer@Zurich@watermark\@empty
+  \if \beamer@Santander@watermark\@empty
 	% This is kind of a kludge since if I put anything in here, I automatically get errors
 	% Somehow LaTeX wants to read the \else part!
 	\else%
-	\llap{\includegraphics[width=\paperwidth,height=\paperheight]{\beamer@Zurich@watermark}}
+	\llap{\includegraphics[width=\paperwidth,height=\paperheight]{\beamer@Santander@watermark}}
   \fi
 }
 

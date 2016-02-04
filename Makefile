@@ -7,12 +7,11 @@ TARGET_FORMAT=pdf
 all:			${PROBLEMS:.tex=.${TARGET_FORMAT}}
 
 %.pdf:			%.tex force
-				latexmk -xelatex $<
+				pdflatex $<
 
 force:			;
 
 .PHONY: clean
 
 clean:
-			latexmk -C
 			rm -f *.bbl *.xml *.snm *.nav *.out *.fdb_latexmk *.vrb *.table *.gnuplot *-blx.bib

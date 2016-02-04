@@ -2,15 +2,21 @@
 \usetheme[
 	bullet=circle,		% Other option: square
 	bigpagenumber,		% circled page number on lower right
-	topline=true,		% colored bar at the top of the frame 
-	]{Zurich}
+%    nofooter,           % no footer
+    shadow=true,        % shadow boxes
+%    watermart=,         % watermark to be included
+	]{Santander}
 
 
 %-----------------------------------------------------------------------------
 % DOCUMENT PROPERTIES
 
-\author{Patrick Pletscher}
-\title{Zurich Beamer Theme}
+\author{{\'A}lvaro L{\'o}pez Garc{\'i}a}
+\title{Santander Theme}
+\subtitle{A minimalistic beamer theme}
+\institute{Center for minimalistic beamer themes}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo/logo}}
+
 
 %-----------------------------------------------------------------------------
 
@@ -33,19 +39,11 @@
 % ----------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Fonts}
-\framesubtitle{Handwriting}
 
 \begin{itemize}
     \item Line 1.
-    \only<2->{
-    \item Line 2.\\
-        {\handwriting \textcolor{tangocolordarkchameleon}{Less formal} }
-    }
-    \only<3->{
-    \item Line 3.\\
-        {\handwriting \textcolor{tangocolordarkscarletred}{
-        Less formal, different color.} }
-    }
+    \item<2-> Line 2.
+    \item<3-> Line 3.
 \end{itemize}
 
 
@@ -73,20 +71,5 @@
 
 \end{frame}
 % ----------------------------------------------------------------------------
-
-
-% ----------------------------------------------------------------------------
-\usebackgroundtemplate{
-   \includegraphics[width=\paperwidth,
-                    height=\paperheight]{aletsch}
-}
-\begin{frame}
-\ \\ \ \\
-\centering \Large \textcolor{white}{Questions?}
-
-\end{frame}
-\usebackgroundtemplate{}
-% ----------------------------------------------------------------------------
-
 
 \end{document}
